@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Projet><Package nom="bin"/>
+<Package nom="packages"><CustomClass nom="Address" type="Class"><Champ>street</Champ>
+<Champ>city</Champ>
+<Champ>state</Champ>
+<Champ>zipCode</Champ>
+<Methode>setCity</Methode>
+<Methode>setZipCode</Methode>
+<Methode>getCity</Methode>
+<Methode>getStreet</Methode>
+<Methode>setStreet</Methode>
+<Methode>getZipCode</Methode>
+<Methode>getState</Methode>
+<Methode>setState</Methode>
+<Superclass>Person</Superclass>
+</CustomClass>
+<CustomClass nom="Person" type="Class"><Champ>name</Champ>
+<Champ>address</Champ>
+<Champ>externalList</Champ>
+<Methode>setExternalList</Methode>
+<Methode>getExternalList</Methode>
+<Methode>setAddress</Methode>
+<Methode>getName</Methode>
+<Methode>setName</Methode>
+<Methode>getAddress</Methode>
+<Superclass>Object</Superclass>
+<Aggregation>Address</Aggregation>
+<Utilisation>Address</Utilisation>
+</CustomClass>
+<CustomClass nom="Shape" type="Interface"><Methode>draw</Methode>
+<Superclass/>
+</CustomClass>
+</Package>
+</Projet>
