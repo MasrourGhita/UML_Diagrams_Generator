@@ -1,22 +1,24 @@
-package extraction;
+package org.mql.java.extraction;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Vector;
 
 public class CustomPackage {
+
+    private Vector<CustomClass> classes;
     private String name;
-    private List<CustomClass> classes;
 
     public CustomPackage(String name) {
         this.name = name;
-        this.classes = new ArrayList<>();
+        this.classes = new Vector<>();
     }
 
     public String getName() {
         return name;
     }
 
-    public List<CustomClass> getClasses() {
+   
+
+    public Vector<CustomClass> getClasses() {
         return classes;
     }
 
