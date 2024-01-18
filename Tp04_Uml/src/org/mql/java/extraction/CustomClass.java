@@ -2,11 +2,14 @@ package org.mql.java.extraction;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
 
 public class CustomClass {
     private String name;
     private String type;
+    private List<CustomClass> implementedInterfaces = new ArrayList<>();
     private Vector<Method> methods;
     private Vector<CustomClass> aggregatedClasses;
     private Vector<CustomClass> usedClasses;
@@ -56,7 +59,11 @@ public class CustomClass {
     public void setSuperclass(String superclass) {
         this.superclass = superclass;
     }
+    public void addImplementedInterface(CustomClass implementedInterface) {
+        this.implementedInterfaces.add(implementedInterface);
+    }
 
+	
     public Vector<String> getAggregations() {
         Vector<String> aggregationNames = new Vector<>();
         for (CustomClass aggregatedClass : aggregatedClasses) {
@@ -88,4 +95,8 @@ public class CustomClass {
     public Vector<CustomClass> getUsedClasses() {
         return usedClasses;
     }
+
+	public List<CustomClass> getImplementedInterfaces() {
+		 return implementedInterfaces;
+	}
 }

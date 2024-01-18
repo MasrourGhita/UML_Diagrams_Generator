@@ -3,30 +3,36 @@
 <Champ>city</Champ>
 <Champ>state</Champ>
 <Champ>zipCode</Champ>
-<Methode>setCity</Methode>
-<Methode>setZipCode</Methode>
-<Methode>getCity</Methode>
-<Methode>getStreet</Methode>
-<Methode>setStreet</Methode>
-<Methode>getZipCode</Methode>
 <Methode>getState</Methode>
 <Methode>setState</Methode>
-<Superclass>Person</Superclass>
+<Methode>getCity</Methode>
+<Methode>getZipCode</Methode>
+<Methode>setStreet</Methode>
+<Methode>getStreet</Methode>
+<Methode>setCity</Methode>
+<Methode>setZipCode</Methode>
+<Superclass>Object</Superclass>
+</CustomClass>
+<CustomClass nom="Annotations" type="Annotation"><Superclass/>
+</CustomClass>
+<CustomClass nom="Drawable" type="Interface"><Methode>render</Methode>
+<Superclass/>
 </CustomClass>
 <CustomClass nom="Person" type="Class"><Champ>name</Champ>
 <Champ>address</Champ>
 <Champ>externalList</Champ>
-<Methode>setExternalList</Methode>
-<Methode>getExternalList</Methode>
-<Methode>setAddress</Methode>
 <Methode>getName</Methode>
 <Methode>setName</Methode>
 <Methode>getAddress</Methode>
+<Methode>getExternalList</Methode>
+<Methode>setExternalList</Methode>
+<Methode>setAddress</Methode>
 <Superclass>Object</Superclass>
 <Aggregation>Address</Aggregation>
 <Utilisation>Address</Utilisation>
 </CustomClass>
-<CustomClass nom="Shape" type="Interface"><Methode>draw</Methode>
+<CustomClass nom="Serializable" type="Interface"><Champ>ser</Champ>
+<Methode>serializeMethod</Methode>
 <Superclass/>
 </CustomClass>
 </Package>

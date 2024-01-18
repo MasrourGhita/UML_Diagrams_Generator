@@ -31,7 +31,10 @@ public class RelationsExtractor {
 	            e.printStackTrace();
 	        }
 	    }
-
+	   
+	  
+	    
+	   
 	    public static void extractInheritance(CustomClass customClass, Class<?> clazz) {
 	        try {
 	            Class<?> superclass = clazz.getSuperclass();

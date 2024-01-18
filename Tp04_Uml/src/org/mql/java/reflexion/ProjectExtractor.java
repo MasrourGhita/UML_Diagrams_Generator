@@ -55,6 +55,7 @@ public class ProjectExtractor {
                     RelationsExtractor.extractInheritance(customClass, clazz);
                     RelationsExtractor.extractAggregations(customClass, clazz, customProject);
                     RelationsExtractor.extractUsages(customClass, clazz.getDeclaredMethods(), customProject);
+                 
                     customPackage.addClass(customClass);
                    
                 }
