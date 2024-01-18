@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><xmi:Projet xmlns:xmi="http://www.omg.org/XMI" xmlns:uml="http://www.omg.org/spec/UML/20090901"><xmi:Package nom="bin"/>
+<xmi:Package nom="packages"><xmi:Class nom="Address" type="uml:Class"><xmi:Attribute nom="street" xmi:type="uml:Property"/>
+<xmi:Attribute nom="city" xmi:type="uml:Property"/>
+<xmi:Attribute nom="state" xmi:type="uml:Property"/>
+<xmi:Attribute nom="zipCode" xmi:type="uml:Property"/>
+<xmi:Operation nom="getCity" xmi:type="uml:Operation"/>
+<xmi:Operation nom="setCity" xmi:type="uml:Operation"/>
+<xmi:Operation nom="getZipCode" xmi:type="uml:Operation"/>
+<xmi:Operation nom="setZipCode" xmi:type="uml:Operation"/>
+<xmi:Operation nom="setStreet" xmi:type="uml:Operation"/>
+<xmi:Operation nom="getStreet" xmi:type="uml:Operation"/>
+<xmi:Operation nom="getState" xmi:type="uml:Operation"/>
+<xmi:Operation nom="setState" xmi:type="uml:Operation"/>
+<xmi:Generalization xmi:type="uml:Generalization"><xmi:Generalization.superclass>Object</xmi:Generalization.superclass></xmi:Generalization>
+</xmi:Class>
+<xmi:Class nom="Annotations" type="uml:Class"/>
+<xmi:Class nom="Drawable" type="uml:Class"><xmi:Operation nom="render" xmi:type="uml:Operation"/>
+</xmi:Class>
+<xmi:Class nom="Person" type="uml:Class"><xmi:Attribute nom="name" xmi:type="uml:Property"/>
+<xmi:Attribute nom="address" xmi:type="uml:Property"/>
+<xmi:Attribute nom="externalList" xmi:type="uml:Property"/>
+<xmi:Operation nom="setExternalList" xmi:type="uml:Operation"/>
+<xmi:Operation nom="getExternalList" xmi:type="uml:Operation"/>
+<xmi:Operation nom="setAddress" xmi:type="uml:Operation"/>
+<xmi:Operation nom="getName" xmi:type="uml:Operation"/>
+<xmi:Operation nom="setName" xmi:type="uml:Operation"/>
+<xmi:Operation nom="getAddress" xmi:type="uml:Operation"/>
+<xmi:Generalization xmi:type="uml:Generalization"><xmi:Generalization.superclass>Object</xmi:Generalization.superclass></xmi:Generalization>
+<xmi:Association xmi:type="uml:Association"><xmi:Association.memberEnd>Address</xmi:Association.memberEnd></xmi:Association>
+<xmi:Dependency xmi:type="uml:Dependency"><xmi:Dependency.supplier>Address</xmi:Dependency.supplier></xmi:Dependency>
+</xmi:Class>
+<xmi:Class nom="Serializable" type="uml:Class"><xmi:Attribute nom="ser" xmi:type="uml:Property"/>
+<xmi:Operation nom="serializeMethod" xmi:type="uml:Operation"/>
+</xmi:Class>
+</xmi:Package>
+</xmi:Projet>
