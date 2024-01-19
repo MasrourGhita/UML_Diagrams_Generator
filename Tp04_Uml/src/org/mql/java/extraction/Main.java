@@ -12,14 +12,17 @@ import org.mql.java.xml.XMLPersister;
 public class Main {
 
 	 public static void main(String[] args) {
-	        String projectPath = "C:\\Users\\pc\\eclipseWorksapace\\Test\\bin";
-	        CustomClassLoader classLoader = CustomClassLoader.createCustomClassLoader(projectPath);
-	        ProjectExtractor projectExtractor = new ProjectExtractor(classLoader);
+		 String projectPath = "C:\\Users\\pc\\eclipseWorksapace\\Test\\bin";
+		 CustomClassLoader classLoader = CustomClassLoader.createCustomClassLoader(projectPath);
+
+	       
+	        ProjectExtractor projectExtractor = new ProjectExtractor(classLoader, projectPath);
 	        CustomProject customProject = projectExtractor.extractProjectInfo(projectPath);
-	      //  printProjectDetails(customProject);
+	      printProjectDetails(customProject);
 	        XMLPersister.persistToXML(customProject, "resources/output.xml");
-	        CustomProject loadedProject = XMLLoader.loadXMLFile("resources/output.xml");
-	        printProjectDetails(loadedProject);
+	      //  CustomProject loadedProject = XMLLoader.loadXMLFile("resources/output.xml");
+	       // printProjectDetails(loadedProject);
+	        
 	    }
 
 	 
@@ -37,7 +40,7 @@ public class Main {
 		                        System.out.println("                 " + fieldName);
 		                    }
 		                }
-
+ 
 		                List<String> methodNames = customClass.getMethodNames();
 		                if (!methodNames.isEmpty()) {
 		                    System.out.println("         Methods: ");

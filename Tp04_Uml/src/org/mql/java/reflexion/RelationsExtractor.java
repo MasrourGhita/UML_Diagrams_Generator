@@ -16,7 +16,7 @@ public class RelationsExtractor {
 	            }
 	        } catch (Exception e) {
 	            System.out.println("Erreur lors de l'extraction des méthodes : " + e.getMessage());
-	            e.printStackTrace();
+	            e.printStackTrace(); 
 	        }
 	    }
 

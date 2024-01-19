@@ -16,7 +16,13 @@ public class CustomPackage {
         return name;
     }
 
-   
+    public String getParentPackage() {
+        int lastDotIndex = name.lastIndexOf(".");
+        if (lastDotIndex != -1) {
+            return name.substring(0, lastDotIndex);
+        }
+        return "";  // Ou lancez une exception si vous le préférez
+    }
 
     public Vector<CustomClass> getClasses() {
         return classes;

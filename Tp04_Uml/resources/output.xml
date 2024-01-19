@@ -1,16 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><Projet><Package nom="bin"/>
-<Package nom="packages"><CustomClass nom="Address" type="Class"><Champ>street</Champ>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Projet><Package nom=""/>
+<Package nom="org"/>
+<Package nom="org.mql"/>
+<Package nom="org.mql.java"/>
+<Package nom="org.mql.java.test"><CustomClass nom="Address" type="Class"><Champ>street</Champ>
 <Champ>city</Champ>
 <Champ>state</Champ>
 <Champ>zipCode</Champ>
 <Methode>getState</Methode>
 <Methode>setState</Methode>
-<Methode>getStreet</Methode>
-<Methode>setStreet</Methode>
-<Methode>getCity</Methode>
-<Methode>setZipCode</Methode>
-<Methode>getZipCode</Methode>
 <Methode>setCity</Methode>
+<Methode>getCity</Methode>
+<Methode>setStreet</Methode>
+<Methode>setZipCode</Methode>
+<Methode>getStreet</Methode>
+<Methode>getZipCode</Methode>
 <Superclass>Object</Superclass>
 </CustomClass>
 <CustomClass nom="Drawable" type="Interface"><Methode>render</Methode>
@@ -32,6 +35,9 @@
 <CustomClass nom="Serializable" type="Interface"><Champ>ser</Champ>
 <Methode>serializeMethod</Methode>
 <Superclass/>
+</CustomClass>
+</Package>
+<Package nom="org.mql.java.ui"><CustomClass nom="Ghita" type="Class"><Superclass>Object</Superclass>
 </CustomClass>
 </Package>
 </Projet>
