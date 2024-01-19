@@ -5,15 +5,13 @@
 <Champ>zipCode</Champ>
 <Methode>getState</Methode>
 <Methode>setState</Methode>
-<Methode>getCity</Methode>
-<Methode>getZipCode</Methode>
-<Methode>setStreet</Methode>
 <Methode>getStreet</Methode>
-<Methode>setCity</Methode>
+<Methode>setStreet</Methode>
+<Methode>getCity</Methode>
 <Methode>setZipCode</Methode>
+<Methode>getZipCode</Methode>
+<Methode>setCity</Methode>
 <Superclass>Object</Superclass>
-</CustomClass>
-<CustomClass nom="Annotations" type="Annotation"><Superclass/>
 </CustomClass>
 <CustomClass nom="Drawable" type="Interface"><Methode>render</Methode>
 <Superclass/>
@@ -24,8 +22,8 @@
 <Methode>getName</Methode>
 <Methode>setName</Methode>
 <Methode>getAddress</Methode>
-<Methode>getExternalList</Methode>
 <Methode>setExternalList</Methode>
+<Methode>getExternalList</Methode>
 <Methode>setAddress</Methode>
 <Superclass>Object</Superclass>
 <Aggregation>Address</Aggregation>

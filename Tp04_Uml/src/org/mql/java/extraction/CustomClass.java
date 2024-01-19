@@ -2,18 +2,18 @@ package org.mql.java.extraction;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Vector;
 
 public class CustomClass {
     private String name;
     private String type;
-    private List<CustomClass> implementedInterfaces = new ArrayList<>();
+    private Vector<String> methodNames;
+    private Vector<String> fieldNames;
     private Vector<Method> methods;
     private Vector<CustomClass> aggregatedClasses;
     private Vector<CustomClass> usedClasses;
     private Vector<Field> fields;
+
     private String superclass;
 
     public CustomClass(String name) {
@@ -22,6 +22,8 @@ public class CustomClass {
         this.aggregatedClasses = new Vector<>();
         this.usedClasses = new Vector<>();
         this.fields = new Vector<>();
+        this.methodNames = new Vector<>(); 
+        this.fieldNames = new Vector<>(); 
     }
 
     public String getName() {
@@ -59,11 +61,7 @@ public class CustomClass {
     public void setSuperclass(String superclass) {
         this.superclass = superclass;
     }
-    public void addImplementedInterface(CustomClass implementedInterface) {
-        this.implementedInterfaces.add(implementedInterface);
-    }
 
-	
     public Vector<String> getAggregations() {
         Vector<String> aggregationNames = new Vector<>();
         for (CustomClass aggregatedClass : aggregatedClasses) {
@@ -87,7 +85,7 @@ public class CustomClass {
     public void addUsage(CustomClass usedClass) {
         usedClasses.add(usedClass);
     }
-    
+
     public Vector<CustomClass> getAggregatedClasses() {
         return aggregatedClasses;
     }
@@ -96,7 +94,19 @@ public class CustomClass {
         return usedClasses;
     }
 
-	public List<CustomClass> getImplementedInterfaces() {
-		 return implementedInterfaces;
-	}
+    public Vector<String> getMethodNames() {
+        return methodNames;
+    }
+
+    public void addMethodName(String methodName) {
+        methodNames.add(methodName);
+    }
+
+    public Vector<String> getFieldNames() {
+        return fieldNames;
+    }
+
+    public void addFieldName(String fieldName) {
+        fieldNames.add(fieldName);
+    }
 }

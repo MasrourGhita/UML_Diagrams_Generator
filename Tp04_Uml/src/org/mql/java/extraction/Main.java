@@ -1,10 +1,11 @@
 package org.mql.java.extraction;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
+
+import java.util.List;
 import java.util.Vector;
 
 import org.mql.java.reflexion.ProjectExtractor;
+import org.mql.java.xml.XMLLoader;
 import org.mql.java.xml.XMLPersister;
 
 
@@ -15,50 +16,54 @@ public class Main {
 	        CustomClassLoader classLoader = CustomClassLoader.createCustomClassLoader(projectPath);
 	        ProjectExtractor projectExtractor = new ProjectExtractor(classLoader);
 	        CustomProject customProject = projectExtractor.extractProjectInfo(projectPath);
-	        printProjectDetails(customProject);
+	      //  printProjectDetails(customProject);
 	        XMLPersister.persistToXML(customProject, "resources/output.xml");
+	        CustomProject loadedProject = XMLLoader.loadXMLFile("resources/output.xml");
+	        printProjectDetails(loadedProject);
 	    }
 
 	 
 	 private static void printProjectDetails(CustomProject customProject) {
-	        for (CustomPackage customPackage : customProject.getPackages()) {
-	            if (!customPackage.getName().isEmpty()) {
-	                System.out.println("Package: " + customPackage.getName() + "\n");
-	                for (CustomClass customClass : customPackage.getClasses()) {
-	                    System.out.println(" ------> " + customClass.getType() + " : " + customClass.getName());
+		    for (CustomPackage customPackage : customProject.getPackages()) {
+		        if (!customPackage.getName().isEmpty()) {
+		            System.out.println("Package: " + customPackage.getName() + "\n");
+		            for (CustomClass customClass : customPackage.getClasses()) {
+		                System.out.println(" ------> " + customClass.getType() + " : " + customClass.getName());
 
-	                    System.out.println("         Fields: ");
-	                    Vector<Field> fields = customClass.getFields();
-	                    if (!fields.isEmpty()) {
-	                        for (Field field : fields) {
-	                            System.out.println("                 " + field.getName());
-	                        }
-	                    }
+		                List<String> fieldNames = customClass.getFieldNames();
+		                if (!fieldNames.isEmpty()) {
+		                    System.out.println("         Fields: ");
+		                    for (String fieldName : fieldNames) {
+		                        System.out.println("                 " + fieldName);
+		                    }
+		                }
 
-	                    System.out.println("         Methods: ");
-	                    Vector<Method> methods = customClass.getMethods();
-	                    if (!methods.isEmpty()) {
-	                        for (Method method : methods) {
-	                            System.out.println("                  " + method.getName());
-	                        }
-	                    }
-	                    String superclass = customClass.getSuperclass();
-	                    if (superclass != null) {
-	                        System.out.println("        Extension:\n                   " + superclass);
-	                    }
+		                List<String> methodNames = customClass.getMethodNames();
+		                if (!methodNames.isEmpty()) {
+		                    System.out.println("         Methods: ");
+		                    for (String methodName : methodNames) {
+		                        System.out.println("                  " + methodName);
+		                    }
+		                }
 
-	                    Vector<String> aggregations = customClass.getAggregations();
-	                    if (!aggregations.isEmpty()) {
-	                        System.out.println("        Agrégation:\n                  " + String.join(", ", aggregations));
-	                    }
+		                String superclass = customClass.getSuperclass();
+		                if (superclass != null && !superclass.isEmpty()) {
+		                    System.out.println("        Extension:\n                   " + superclass);
+		                }
 
-	                    Vector<String> usages = customClass.getUsages();
-	                    if (!usages.isEmpty()) {
-	                        System.out.println("        Utilisation :\n                  " + String.join(" , ", usages));
-	                    }
-	                    System.out.println("\n");
-	                }
-	            }
-	        }
-	    }
-	}
+		                Vector<String> aggregations = customClass.getAggregations();
+		                if (!aggregations.isEmpty()) {
+		                    System.out.println("        Agrégation:\n                  " + String.join(", ", aggregations));
+		                }
+
+		                Vector<String> usages = customClass.getUsages();
+		                if (!usages.isEmpty()) {
+		                    System.out.println("        Utilisation :\n                  " + String.join(" , ", usages));
+		                }
+
+		                System.out.println("\n");
+		            }
+		        }
+		    }
+		}
+}
