@@ -1,4 +1,4 @@
-package org.mql.java.extraction;
+package org.mql.java.infoProject;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

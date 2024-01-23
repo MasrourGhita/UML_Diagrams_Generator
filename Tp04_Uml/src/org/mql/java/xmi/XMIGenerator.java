@@ -7,9 +7,9 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
-import org.mql.java.extraction.CustomClass;
-import org.mql.java.extraction.CustomPackage;
-import org.mql.java.extraction.CustomProject;
+import org.mql.java.infoProject.CustomClass;
+import org.mql.java.infoProject.CustomPackage;
+import org.mql.java.infoProject.CustomProject;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import java.io.File;

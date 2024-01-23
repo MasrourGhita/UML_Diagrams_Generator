@@ -6,38 +6,32 @@
 <Champ>city</Champ>
 <Champ>state</Champ>
 <Champ>zipCode</Champ>
-<Methode>getState</Methode>
 <Methode>setState</Methode>
-<Methode>setCity</Methode>
-<Methode>getCity</Methode>
 <Methode>setStreet</Methode>
 <Methode>setZipCode</Methode>
-<Methode>getStreet</Methode>
-<Methode>getZipCode</Methode>
+<Methode>setCity</Methode>
 <Superclass>Object</Superclass>
-</CustomClass>
-<CustomClass nom="Drawable" type="Interface"><Methode>render</Methode>
-<Superclass/>
 </CustomClass>
 <CustomClass nom="Person" type="Class"><Champ>name</Champ>
 <Champ>address</Champ>
 <Champ>externalList</Champ>
-<Methode>getName</Methode>
-<Methode>setName</Methode>
-<Methode>getAddress</Methode>
 <Methode>setExternalList</Methode>
-<Methode>getExternalList</Methode>
+<Methode>setName</Methode>
 <Methode>setAddress</Methode>
 <Superclass>Object</Superclass>
 <Aggregation>Address</Aggregation>
 <Utilisation>Address</Utilisation>
 </CustomClass>
 <CustomClass nom="Serializable" type="Interface"><Champ>ser</Champ>
-<Methode>serializeMethod</Methode>
 <Superclass/>
 </CustomClass>
 </Package>
-<Package nom="org.mql.java.ui"><CustomClass nom="Ghita" type="Class"><Superclass>Object</Superclass>
+<Package nom="org.mql.java.ui"><CustomClass nom="Ghita" type="Class"><Champ>Ghit</Champ>
+<Superclass>Object</Superclass>
+</CustomClass>
+<CustomClass nom="ProjectClass" type="Class"><Champ>dataList</Champ>
+<Methode>setDataList</Methode>
+<Superclass>Object</Superclass>
 </CustomClass>
 </Package>
 </Projet>

@@ -1,12 +1,13 @@
-// ProjectExtractor.java
-package org.mql.java.reflexion;
+package org.mql.java.extraction;
 
 import java.io.File;
 
-import org.mql.java.extraction.CustomClass;
-import org.mql.java.extraction.CustomClassLoader;
-import org.mql.java.extraction.CustomPackage;
-import org.mql.java.extraction.CustomProject;
+import org.mql.java.infoProject.CustomClass;
+import org.mql.java.infoProject.CustomPackage;
+import org.mql.java.infoProject.CustomProject;
+import org.mql.java.reflexion.RelationsExtractor;
+
+
 
 public class ProjectExtractor {
     private CustomClassLoader classLoader;
@@ -15,7 +16,7 @@ public class ProjectExtractor {
     public ProjectExtractor(CustomClassLoader classLoader, String projectPath) {
         this.classLoader = classLoader;
         this.projectPath = projectPath;
-    }
+    } 
 
     public CustomProject extractProjectInfo(String projectPath) {
         CustomProject customProject = new CustomProject();
@@ -62,7 +63,7 @@ public class ProjectExtractor {
 
                     RelationsExtractor.extractMethods(customClass, clazz);
                     RelationsExtractor.extractFields(customClass, clazz);
-                    RelationsExtractor.extractInheritance(customClass, clazz);
+                    RelationsExtractor.extractExtraction(customClass, clazz);
                     RelationsExtractor.extractAggregations(customClass, clazz, customProject);
                     RelationsExtractor.extractUsages(customClass, clazz.getDeclaredMethods(), customProject);
 

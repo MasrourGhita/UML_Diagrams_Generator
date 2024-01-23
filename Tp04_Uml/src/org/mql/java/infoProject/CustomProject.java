@@ -1,4 +1,4 @@
-package org.mql.java.extraction;
+package org.mql.java.infoProject;
 
 import java.util.Vector;
 

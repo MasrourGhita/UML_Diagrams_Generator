@@ -1,13 +1,13 @@
 package org.mql.java.xml;
 
-import org.mql.java.extraction.CustomClass;
-import org.mql.java.extraction.CustomPackage;
-import org.mql.java.extraction.CustomProject;
+
+import org.mql.java.infoProject.CustomClass;
+import org.mql.java.infoProject.CustomPackage;
+import org.mql.java.infoProject.CustomProject;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;

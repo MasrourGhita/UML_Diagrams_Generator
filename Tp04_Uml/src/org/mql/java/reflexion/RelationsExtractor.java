@@ -3,39 +3,46 @@ package org.mql.java.reflexion;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-import org.mql.java.extraction.CustomClass;
-import org.mql.java.extraction.CustomPackage;
-import org.mql.java.extraction.CustomProject;
+import org.mql.java.infoProject.CustomClass;
+import org.mql.java.infoProject.CustomPackage;
+import org.mql.java.infoProject.CustomProject;
+
+
 
 public class RelationsExtractor {
-	 public static void extractMethods(CustomClass customClass, Class<?> clazz) {
-	        try {
-	            Method[] methods = clazz.getDeclaredMethods();
-	            for (Method method : methods) {
-	                customClass.addMethod(method);
-	            }
-	        } catch (Exception e) {
-	            System.out.println("Erreur lors de l'extraction des méthodes : " + e.getMessage());
-	            e.printStackTrace(); 
-	        }
+	public static void extractMethods(CustomClass customClass, Class<?> clazz) {
+	    try {
+	        Method[] methods = clazz.getDeclaredMethods();
+	        for (Method method : methods) {
+	            customClass.addMethod(method);
+	            customClass.addMethodName(method.getName());
+	           
+	        } 
+	    } catch (Exception e) {
+	        System.out.println("Erreur lors de l'extraction des méthodes : " + e.getMessage());
+	        e.printStackTrace();
 	    }
+	}
 
-	    public static void extractFields(CustomClass customClass, Class<?> clazz) {
-	        try {
-	            Field[] fields = clazz.getDeclaredFields();
-	            for (Field field : fields) {
-	                customClass.addField(field);
-	            }
-	        } catch (Exception e) {
-	            System.out.println("Erreur lors de l'extraction des champs : " + e.getMessage());
-	            e.printStackTrace();
+	public static void extractFields(CustomClass customClass, Class<?> clazz) {
+	    try {
+	        Field[] fields = clazz.getDeclaredFields();
+	        for (Field field : fields) {
+	            customClass.addField(field);
+	            customClass.addFieldName(field.getName());
+	          
 	        }
+	    } catch (Exception e) {
+	        System.out.println("Erreur lors de l'extraction des champs : " + e.getMessage());
+	        e.printStackTrace();
 	    }
+	}
+
 	   
 	  
 	    
 	   
-	    public static void extractInheritance(CustomClass customClass, Class<?> clazz) {
+	    public static void extractExtraction(CustomClass customClass, Class<?> clazz) {
 	        try {
 	            Class<?> superclass = clazz.getSuperclass();
 	            if (superclass != null) {
@@ -78,24 +85,24 @@ public class RelationsExtractor {
 	    }
 
 		  public static void extractUsages(CustomClass customClass, Method[] methods, CustomProject customProject) {
-        try {
-            for (Method method : methods) {
-                Class<?>[] parameterTypes = method.getParameterTypes();
-                for (Class<?> parameterType : parameterTypes) {
-                    CustomClass usedClass = findClassByType(customProject, parameterType);
-                    if (usedClass != null) {
-                        customClass.addUsage(usedClass);
+       try {
+           for (Method method : methods) {
+               Class<?>[] parameterTypes = method.getParameterTypes();
+               for (Class<?> parameterType : parameterTypes) {
+                   CustomClass usedClass = findClassByType(customProject, parameterType);
+                   if (usedClass != null) {
+                       customClass.addUsage(usedClass);
 
-                        
                        
-                    }
-                }
-            }
-        } catch (Exception e) {
-            System.out.println("Erreur lors de l'extraction des utilisations : " + e.getMessage());
-            e.printStackTrace();
-        }
-    }
+                      
+                   }
+               }
+           }
+       } catch (Exception e) {
+           System.out.println("Erreur lors de l'extraction des utilisations : " + e.getMessage());
+           e.printStackTrace();
+       }
+   }
 		  
 
 }

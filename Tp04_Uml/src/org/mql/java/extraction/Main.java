@@ -4,7 +4,9 @@ package org.mql.java.extraction;
 import java.util.List;
 import java.util.Vector;
 
-import org.mql.java.reflexion.ProjectExtractor;
+import org.mql.java.infoProject.CustomClass;
+import org.mql.java.infoProject.CustomPackage;
+import org.mql.java.infoProject.CustomProject;
 import org.mql.java.xml.XMLLoader;
 import org.mql.java.xml.XMLPersister;
 
@@ -15,13 +17,13 @@ public class Main {
 		 String projectPath = "C:\\Users\\pc\\eclipseWorksapace\\Test\\bin";
 		 CustomClassLoader classLoader = CustomClassLoader.createCustomClassLoader(projectPath);
 
-	       
+	        
 	        ProjectExtractor projectExtractor = new ProjectExtractor(classLoader, projectPath);
 	        CustomProject customProject = projectExtractor.extractProjectInfo(projectPath);
-	      printProjectDetails(customProject);
-	        XMLPersister.persistToXML(customProject, "resources/output.xml");
-	      //  CustomProject loadedProject = XMLLoader.loadXMLFile("resources/output.xml");
-	       // printProjectDetails(loadedProject);
+	      // printProjectDetails(customProject);
+  XMLPersister.persistToXML(customProject, "resources/output.xml");
+	       CustomProject loadedProject = XMLLoader.loadXMLFile("resources/output.xml");
+	       printProjectDetails(loadedProject);
 	        
 	    }
 
@@ -35,7 +37,7 @@ public class Main {
 
 		                List<String> fieldNames = customClass.getFieldNames();
 		                if (!fieldNames.isEmpty()) {
-		                    System.out.println("         Fields: ");
+		                    System.out.println("         Champs: ");
 		                    for (String fieldName : fieldNames) {
 		                        System.out.println("                 " + fieldName);
 		                    }
