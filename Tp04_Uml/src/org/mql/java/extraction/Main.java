@@ -20,8 +20,8 @@ public class Main {
 	        
 	        ProjectExtractor projectExtractor = new ProjectExtractor(classLoader, projectPath);
 	        CustomProject customProject = projectExtractor.extractProjectInfo(projectPath);
-	      // printProjectDetails(customProject);
-  XMLPersister.persistToXML(customProject, "resources/output.xml");
+	       printProjectDetails(customProject);
+            XMLPersister.persistToXML(customProject, "resources/output.xml");
 	       CustomProject loadedProject = XMLLoader.loadXMLFile("resources/output.xml");
 	       printProjectDetails(loadedProject);
 	        
